@@ -139,7 +139,7 @@ const languages = [
 const SkillsSection = () => {
   return (
     <Section>
-      <div>
+      <motion.div whileInView={"visible"}>
         <h2 className="text-5xl font-bold"> Skills</h2>
 
         <div className="mt-8 space-y-4">
@@ -150,14 +150,18 @@ const SkillsSection = () => {
                   opacity: 0,
                   y: 20,
                 }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 1,
-                    delay: 1 + index * 0.2,
-                  },
+                variants={{
+                  visible: {
+                    opacity:1,
+                    y:0,
+                    transition: {
+                      duration: 1,
+                      delay: 1 + index * 0.2,
+                    },
+                  }
+                  
                 }}
+             
                 className="text-xl font-bold text-gray-800"
               >
                 {skill?.title}
@@ -192,13 +196,17 @@ const SkillsSection = () => {
                   opacity: 0,
                   y: 20,
                 }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 1,
-                    delay: 1 + index * 0.2,
-                  },
+               variants={{
+                  visible: {
+                    scaleX:1,
+                    opacity:1,
+                    y:0,
+                    transition: {
+                      duration: 1,
+                      delay: 1 + index * 0.2,
+                    },
+                  }
+                  
                 }}
                 className="text-xl font-bold text-gray-800"
               >
@@ -224,7 +232,7 @@ const SkillsSection = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </Section>
   );
 };
