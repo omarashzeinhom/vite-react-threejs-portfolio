@@ -1,5 +1,4 @@
-# r3f-vite-starter
-A boilerplate to build R3F projects
+# 3D Custom Portofolio
 
 ```
 yarn
@@ -13,5 +12,19 @@ yarn dev
 yarn add leva
 ```
 
+### References 
 
-![image](https://user-images.githubusercontent.com/6551176/221732091-23ee52cb-4150-42fa-b998-43628d7a6b0d.png)
+[Ready Player Me](https://readyplayer.me/)
+
+[Blender](https://www.blender.org/)
+
+[Mixamo](https://www.mixamo.com/#/)
+
+[React Three Fiber documentation](https://docs.pmnd.rs/react-three-fibe...)
+
+[R3F Drei](https://github.com/pmndrs/drei)
+
+
+
+
+
