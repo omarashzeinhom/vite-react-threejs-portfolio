@@ -9,7 +9,7 @@ yarn dev
 ## Libraries Added 
 
 ```sh
-yarn add leva
+yarn add three framer-motion leva
 ```
 
 ### References 
@@ -25,6 +25,7 @@ yarn add leva
 [R3F Drei](https://github.com/pmndrs/drei)
 
 [Installation Install Tailwind CSS with Vite](https://tailwindcss.com/docs/guides/vite)
+[](https://www.framer.com/motion/introduction/)
 
 
 
