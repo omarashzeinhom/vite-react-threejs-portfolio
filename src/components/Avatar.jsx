@@ -23,12 +23,14 @@ export function Avatar(props) {
   );
   const { animations: typingAnimation } = useFBX("animations/Typing.fbx");
   const { animations: fallingAnimation } = useFBX("animations/Falling.fbx");
+  const { animations: standingAnimation } = useFBX("animations/Standing.fbx");
 
   wavingAnimation[0].name = "Waving";
   typingAnimation[0].name = "Typing";
   fallingAnimation[0].name = "Falling";
+  standingAnimation[0].name = "Standing";
 
-  const { actions } = useAnimations([typingAnimation[0], wavingAnimation[0], fallingAnimation[0]], group);
+  const { actions } = useAnimations([typingAnimation[0], wavingAnimation[0], fallingAnimation[0], standingAnimation[0], ], group);
 
   useFrame((state) => {
     if (headFollow) {
@@ -41,9 +43,9 @@ export function Avatar(props) {
   });
 
   useEffect(() => {
-    actions[animation].reset().play();
+    actions[animation].reset().fadeIn(0.3).play();
     return ()=>{
-      actions[animation].reset().stop();
+      actions[animation].reset().fadeOut(0.3);
     }
   }, [animation]);
 

@@ -7,7 +7,7 @@ export const Experience = () => {
 
     animation: {
       value:"Typing",
-      options: ["Typing", "Waving", "Falling" ]
+      options: ["Typing", "Waving", "Falling", "Standing" ]
     }
 
   });
