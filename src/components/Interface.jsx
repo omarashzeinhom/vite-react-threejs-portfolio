@@ -29,7 +29,7 @@ const Interface = () => {
     <div className="flex flex-col items-center w-screen">
       <AboutSection />
       <SkillsSection />
-      <ProjectsSection />
+      <WorkSection />
       <ContactSection />
     </div>
   );
@@ -237,8 +237,8 @@ const SkillsSection = () => {
   );
 };
 
-const ProjectsSection = () => {
-  return <Section>Projects</Section>;
+const WorkSection = () => {
+  return <Section>Work</Section>;
 };
 
 const ContactSection = () => {
