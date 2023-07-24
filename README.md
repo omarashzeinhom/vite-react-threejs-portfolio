@@ -9,7 +9,7 @@ yarn dev
 ## Libraries Added 
 
 ```sh
-yarn add three framer-motion leva
+yarn add three gsap framer-motion leva
 ```
 
 ### References 

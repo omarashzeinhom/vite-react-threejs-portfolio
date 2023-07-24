@@ -225,7 +225,7 @@ const SkillsSection = () => {
                   }}
                   transition={{
                     duration: 1,
-                    delay: 1 + index * 0.2,
+                    delay: 2 + index * 0.2,
                   }}
                 />
               </div>
@@ -248,17 +248,17 @@ const ContactSection = () => {
         <h2 className="text-5xl font-bold">Contact Me</h2>
         <div className="mt-8 p-8 rounded-md bg-white w-96 max-w-full">
           <form>
-            <label for="name" className="font-medium text-gray-900 block mb-1">
+            <label htmlFor="name" className="font-medium text-gray-900 block mb-1">
               Name
             </label>
             <input type="text" name="name" id="name" />
-            <label for="email" className="font-medium text-gray-900 block mb-1">
+            <label htmlFor="email" className="font-medium text-gray-900 block mb-1">
               Email
             </label>
             <input type="text" name="email" id="email" />
 
             <label
-              for="message"
+              htmlFor="message"
               className="font-medium text-gray-900 block mb-1 mt-8"
             >
               Message
