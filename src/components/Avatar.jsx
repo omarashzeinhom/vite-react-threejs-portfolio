@@ -31,7 +31,15 @@ export function Avatar(props) {
   fallingAnimation[0].name = "Falling";
   standingAnimation[0].name = "Standing";
 
-  const { actions } = useAnimations([typingAnimation[0], wavingAnimation[0], fallingAnimation[0], standingAnimation[0], ], group);
+  const { actions } = useAnimations(
+    [
+      typingAnimation[0],
+      wavingAnimation[0],
+      fallingAnimation[0],
+      standingAnimation[0],
+    ],
+    group
+  );
 
   useFrame((state) => {
     if (headFollow) {
@@ -45,17 +53,16 @@ export function Avatar(props) {
 
   useEffect(() => {
     actions[animation].reset().fadeIn(0.3).play();
-    return ()=>{
+    return () => {
       actions[animation].reset().fadeOut(0.3);
     };
   }, [animation]);
 
-  useEffect(()=>{
-   Object.values(materials).forEach((material)=>{
+  useEffect(() => {
+    Object.values(materials).forEach((material) => {
       material.wireframe = wireFrame;
     });
-
-  },[wireFrame]);
+  }, [wireFrame]);
 
   return (
     <group {...props} ref={group} dispose={null}>
