@@ -24,6 +24,8 @@ yarn add leva
 
 [R3F Drei](https://github.com/pmndrs/drei)
 
+[Installation Install Tailwind CSS with Vite](https://tailwindcss.com/docs/guides/vite)
+
 
 
 
