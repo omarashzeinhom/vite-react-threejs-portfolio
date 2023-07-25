@@ -19,13 +19,14 @@ export function Avatar(props) {
   });
   const group = useRef();
   const { nodes, materials } = useGLTF("models/avatar.glb");
-  const { animations: wavingAnimation } = useFBX(
-    "animations/WavingGesture.fbx"
-  );
+ 
+  // animations
+  const { animations: wavingAnimation } = useFBX("animations/WavingGesture.fbx");
   const { animations: typingAnimation } = useFBX("animations/Typing.fbx");
   const { animations: fallingAnimation } = useFBX("animations/Falling.fbx");
   const { animations: standingAnimation } = useFBX("animations/Standing.fbx");
 
+  //naming animations
   wavingAnimation[0].name = "Waving";
   typingAnimation[0].name = "Typing";
   fallingAnimation[0].name = "Falling";
@@ -126,3 +127,7 @@ export function Avatar(props) {
 }
 
 useGLTF.preload("models/avatar.glb");
+useFBX.preload("animations/Typing.fbx");
+useFBX.preload("animations/Standing.fbx");
+useFBX.preload("animations/Falling.fbx");
+useFBX.preload("animations/Waving.fbx");

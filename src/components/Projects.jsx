@@ -8,34 +8,24 @@ import { useEffect, useRef } from "react";
 
 export const projects = [
   {
-    title: "Wawatmos",
-    url: "https://r3f-wawatmos-final.vercel.app/",
-    image: "projects/wawatmos.jpg",
-    description: "Recreating the Atmos Awwwards website with React Three Fiber",
+    title: "ToDo",
+    url: "about:blank",
+    image: "projects/tstodo.png",
+    description:
+      "Built from scratch Back4app, MongoDB , Parse , Ionic Typescript and Parse js-sdk.",
   },
   {
-    title: "Portfolio Baking",
-    url: "https://www.youtube.com/watch?v=YkHqpqJgLKw",
-    image: "projects/baking.jpg",
-    description: "Learn how to bake a 3D model with Blender and use it in r3f",
+    title: "Gym",
+    url: "https://gymcompanyportfolio.netlify.app/",
+    image: "projects/gym.png",
+    description: "Full Stack Gym in MUI and Sanity API",
   },
+
   {
-    title: "3D Avatar",
-    url: "https://www.youtube.com/watch?v=pGMKIyALcK0",
-    image: "projects/avatar.jpg",
-    description: "Learn how to use ReadyPlayerMe to create a 3D avatar",
-  },
-  {
-    title: "Kanagame",
-    url: "https://www.youtube.com/watch?v=zwNF1-lsia8",
-    image: "projects/kanagame.jpg",
-    description: "Use React Three Fiber to create a 3D game",
-  },
-  {
-    title: "Loader",
-    url: "https://www.youtube.com/watch?v=L12wIvuZTOY",
-    image: "projects/loader.jpg",
-    description: "Create a loading screen for your r3f projects",
+    title: "Trophy House",
+    url: "www.gifthouseeg.org",
+    image: "projects/th.webp",
+    description: " A Custom Luxurious Theme Developed From Scratch.",
   },
 ];
 
