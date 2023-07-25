@@ -66,7 +66,7 @@ export function Avatar(props) {
 
   return (
     <group {...props} ref={group} dispose={null}>
-      <group rotation-x={-Math.PI / 2} rotation-y={-Math.PI *  2}>
+      <group rotation-x={-Math.PI / 2} >
         <primitive object={nodes.Hips} />
         <skinnedMesh
           geometry={nodes.Wolf3D_Body.geometry}

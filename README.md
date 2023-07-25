@@ -9,7 +9,7 @@ yarn dev
 ## Libraries Added 
 
 ```sh
-yarn add three gsap framer-motion leva
+yarn add three gsap framer-motion framer-motion-3d leva @react-three/fiber
 ```
 
 ### References 

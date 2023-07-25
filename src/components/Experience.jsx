@@ -7,8 +7,10 @@ import {
 import { Avatar } from "./index";
 import { useControls } from "leva";
 import { Office } from "./Office";
+import { motion } from "framer-motion-3d";
 
-export const Experience = () => {
+export const Experience = (props) => {
+  const { section } = props;
   const { animation } = useControls({
     animation: {
       value: "Typing",
@@ -17,11 +19,30 @@ export const Experience = () => {
   });
   return (
     <>
+      <ambientLight intensity={1} />
       <OrbitControls />
-      <Office/>
+      <motion.group
+        animate={{
+          y: section === 0 ? 0 : 1,
+        }}
+        position-x={1.25}
+      >
+        <Office />
+      </motion.group>
+
       <Sky />
       <Environment preset="sunset" />
-      <group position-y={1.04} position-x={0.25}>
+      <motion.group
+        position-y={1.04}
+        position-x={0.25}
+        transition={{
+          type: "spring",
+          mass: 5,
+          stiffness: 500,
+          damping: 50,
+          restDelta: 0.0001,
+        }}
+      >
         <ContactShadows
           opacity={0.3}
           scale={10}
@@ -30,6 +51,7 @@ export const Experience = () => {
           color="#000000"
         />
         <Avatar animation={animation} />
+
         {animation === "Typing" && (
           <mesh scale={[0.8, 0.5, 0.8]} position-y={0.25}>
             <boxGeometry />
@@ -41,7 +63,7 @@ export const Experience = () => {
           <planeGeometry />
           <meshStandardMaterial color="white" />
         </mesh>
-      </group>
+      </motion.group>
     </>
   );
 };

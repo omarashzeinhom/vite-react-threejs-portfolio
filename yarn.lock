@@ -1179,6 +1179,14 @@ fraction.js@^4.2.0:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.2.0.tgz#448e5109a313a3527f5a3ab2119ec4cf0e0e2950"
   integrity sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==
 
+framer-motion-3d@^10.13.1:
+  version "10.13.1"
+  resolved "https://registry.yarnpkg.com/framer-motion-3d/-/framer-motion-3d-10.13.1.tgz#16ad2a4c1e9f7dd65fb1098f0830b670a31971c8"
+  integrity sha512-861kXCGKgSflfD7HmFT43QCUu/q+UvApXkCLnwSwTZ5j0L8+atFxSXmWeEHq/eMWuUGWdEBFltST0xTWRWVEBw==
+  dependencies:
+    framer-motion "^10.13.1"
+    react-merge-refs "^2.0.1"
+
 framer-motion@^10.13.1:
   version "10.13.1"
   resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.13.1.tgz#f717c924ce9a8927264b41692a870d1366fe296c"
@@ -1717,6 +1725,11 @@ react-merge-refs@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-1.1.0.tgz#73d88b892c6c68cbb7a66e0800faa374f4c38b06"
   integrity sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==
+
+react-merge-refs@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-merge-refs/-/react-merge-refs-2.0.2.tgz#73f576111124897dec4ea56035a97e199e8cb377"
+  integrity sha512-V5BGTwGa2r+/t0A/BZMS6L7VPXY0CU8xtAhkT3XUoI1WJJhhtvulvoiZkJ5Jt9YAW23m4xFWmhQ+C5HwjtTFhQ==
 
 react-reconciler@^0.27.0:
   version "0.27.0"
