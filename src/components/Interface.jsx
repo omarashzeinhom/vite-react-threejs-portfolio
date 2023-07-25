@@ -1,4 +1,7 @@
+import { MeshDistortMaterial, MeshWobbleMaterial } from "@react-three/drei";
 import { motion } from "framer-motion";
+import { Float } from "@react-three/drei";
+import { Avatar } from "./index";
 
 const Section = (props) => {
   const { children } = props;
@@ -136,9 +139,11 @@ const languages = [
   },
 ];
 
-const SkillsSection = () => {
+const SkillsSection = (props) => {
+  const { section } = props;
   return (
     <Section>
+   
       <motion.div whileInView={"visible"}>
         <h2 className="text-5xl font-bold"> Skills</h2>
 
@@ -152,16 +157,14 @@ const SkillsSection = () => {
                 }}
                 variants={{
                   visible: {
-                    opacity:1,
-                    y:0,
+                    opacity: 1,
+                    y: 0,
                     transition: {
                       duration: 1,
                       delay: 1 + index * 0.2,
                     },
-                  }
-                  
+                  },
                 }}
-             
                 className="text-xl font-bold text-gray-800"
               >
                 {skill?.title}
@@ -196,17 +199,16 @@ const SkillsSection = () => {
                   opacity: 0,
                   y: 20,
                 }}
-               variants={{
+                variants={{
                   visible: {
-                    scaleX:1,
-                    opacity:1,
-                    y:0,
+                    scaleX: 1,
+                    opacity: 1,
+                    y: 0,
                     transition: {
                       duration: 1,
                       delay: 1 + index * 0.2,
                     },
-                  }
-                  
+                  },
                 }}
                 className="text-xl font-bold text-gray-800"
               >
@@ -233,6 +235,9 @@ const SkillsSection = () => {
           ))}
         </div>
       </motion.div>
+    
+
+   
     </Section>
   );
 };
@@ -248,11 +253,17 @@ const ContactSection = () => {
         <h2 className="text-5xl font-bold">Contact Me</h2>
         <div className="mt-8 p-8 rounded-md bg-white w-96 max-w-full">
           <form>
-            <label htmlFor="name" className="font-medium text-gray-900 block mb-1">
+            <label
+              htmlFor="name"
+              className="font-medium text-gray-900 block mb-1"
+            >
               Name
             </label>
             <input type="text" name="name" id="name" />
-            <label htmlFor="email" className="font-medium text-gray-900 block mb-1">
+            <label
+              htmlFor="email"
+              className="font-medium text-gray-900 block mb-1"
+            >
               Email
             </label>
             <input type="text" name="email" id="email" />
