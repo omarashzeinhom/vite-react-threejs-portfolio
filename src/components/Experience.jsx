@@ -27,7 +27,7 @@ export const Experience = (props) => {
         }}
         position-x={1.25}
       >
-        <Office />
+        <Office section={section} />
       </motion.group>
 
       <Sky />
