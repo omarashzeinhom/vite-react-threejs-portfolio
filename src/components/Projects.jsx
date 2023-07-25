@@ -10,14 +10,14 @@ export const projects = [
   {
     title: "ToDo",
     url: "about:blank",
-    image: "projects/tstodo.png",
+    image: "projects/tstodo.webp",
     description:
       "Built from scratch Back4app, MongoDB , Parse , Ionic Typescript and Parse js-sdk.",
   },
   {
     title: "Gym",
     url: "https://gymcompanyportfolio.netlify.app/",
-    image: "projects/gym.png",
+    image: "projects/gym.webp",
     description: "Full Stack Gym in MUI and Sanity API",
   },
 
@@ -58,6 +58,7 @@ const Project = (props) => {
         url={project.image}
         toneMapped={false}
         position-y={0.3}
+        loading="lazy"
       />
       <Text
         maxWidth={2}
