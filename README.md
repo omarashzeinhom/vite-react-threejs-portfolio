@@ -25,9 +25,11 @@ yarn add three gsap framer-motion leva
 [R3F Drei](https://github.com/pmndrs/drei)
 
 [Installation Install Tailwind CSS with Vite](https://tailwindcss.com/docs/guides/vite)
-[](https://www.framer.com/motion/introduction/)
+[framer](https://www.framer.com/motion/introduction/)
 
-
-
+- Assets
+  
+[furniture](https://poly.pizza/)
+[](https://polyhaven.com/textures)
 
 

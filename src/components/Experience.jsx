@@ -6,6 +6,7 @@ import {
 } from "@react-three/drei";
 import { Avatar } from "./index";
 import { useControls } from "leva";
+import { Office } from "./Office";
 
 export const Experience = () => {
   const { animation } = useControls({
@@ -17,9 +18,10 @@ export const Experience = () => {
   return (
     <>
       <OrbitControls />
+      <Office/>
       <Sky />
       <Environment preset="sunset" />
-      <group position-y={-1}>
+      <group position-y={1.04} position-x={0.25}>
         <ContactShadows
           opacity={0.3}
           scale={10}
