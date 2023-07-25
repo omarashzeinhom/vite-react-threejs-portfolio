@@ -20,12 +20,14 @@ export function Office(props) {
 
   const textureMaterial = new THREE.MeshStandardMaterial({
     map: texture,
+    transparent: true,
+    opacity: 1,
   })
   
   const textureGlassMaterial = new THREE.MeshStandardMaterial({
     map: texture,
     transparent: true,
-    opacity: 0,
+    opacity: 0.42,
   })
   const textureOpacity = useMotionValue(0);
   const glassTextureOpacity = useMotionValue(0);
