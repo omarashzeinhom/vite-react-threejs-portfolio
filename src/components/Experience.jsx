@@ -43,7 +43,7 @@ export const Experience = (props) => {
   useEffect(() => {
     setCharacterAnimation("Falling");
     setTimeout(() => {
-      setCharacterAnimation(section === 0 ? "Typing" : "Standing");
+      setCharacterAnimation(section === 0 ? "Typing" : "Waving");
     }, 600);
   }, [section]);
 
@@ -120,7 +120,9 @@ export const Experience = (props) => {
             scaleZ: 1,
           },
           3: {
-            y: isMobile ? -viewport.height * 3 + 1.9 : -viewport.height * 3 + 0.1,
+            y: isMobile
+              ? -viewport.height * 3 + 1.9
+              : -viewport.height * 3 + 0.1,
             x: isMobile ? -1 : 1,
             z: isMobile ? 1 : 4,
             rotateX: isMobile ? 0 : 1,
@@ -162,7 +164,6 @@ export const Experience = (props) => {
       </motion.group>
 
       {/* SKILLS */}
-  
 
       <motion.group
         position={[
@@ -195,25 +196,45 @@ export const Experience = (props) => {
         </Float>
         <Float>
           <mesh scale={[2.7, 2.8, 2.7]} position={[3, 1, -18]}>
-            <torusKnotGeometry tube={10} radius={5}/>
+            <torusKnotGeometry tube={10} radius={5} />
             <MeshDistortMaterial
               opacity={0.8}
               transparent
-              distort={1}
-              speed={5}
+              distort={0.9}
+              speed={3}
               color="red"
             />
           </mesh>
         </Float>
         <Float>
           <mesh scale={[1, 1, 1]} position={[-3, -1, -11]}>
-            <torusGeometry />
+            <torusKnotGeometry tube={10} radius={5} />
             <MeshWobbleMaterial
               opacity={0.8}
               transparent
               factor={1}
               speed={5}
               color={"green"}
+            />
+          </mesh>
+          <mesh scale={[1, 1, 1]} position={[-2, -0.5, -9]}>
+            <ringGeometry />
+            <MeshWobbleMaterial
+              opacity={0.8}
+              transparent
+              factor={3}
+              speed={4}
+              color={"blue"}
+            />
+          </mesh>
+          <mesh scale={[1, 1, 1]} position={[4, -3.5, -5]}>
+            <capsuleGeometry />
+            <MeshWobbleMaterial
+              opacity={0.8}
+              transparent
+              factor={3}
+              speed={4}
+              color={"orange"}
             />
           </mesh>
         </Float>
