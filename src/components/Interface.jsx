@@ -46,7 +46,7 @@ const AboutSection = () => {
         <span className="bg-white px-1 italic rounded"> Omar Zeinhom</span>
       </h1>
       <motion.p
-        className="text-lg text-gray-600 mt-4"
+        className="text-lg text-indigo-900 mt-4"
         initial={{
           opacity: 0,
           y: 25,
@@ -60,10 +60,8 @@ const AboutSection = () => {
           },
         }}
       >
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, cum
-        exercitationem deserunt iusto quaerat repellat beatae laborum ipsam
-        dolorem eligendi? Modi repellat non voluptas voluptates, totam
-        blanditiis accusamus est commodi.
+       I develop 3D and animated Javascript and php websites
+       from scratch.
       </motion.p>
       <motion.button
         initial={{
