@@ -120,8 +120,8 @@ export const Experience = (props) => {
             scaleZ: 1,
           },
           3: {
-            y: -viewport.height * 3 + 1,
-            x: isMobile ? -0.74 : 1.3,
+            y: isMobile ? -viewport.height * 3 + 1.9 : -viewport.height * 3 + 1,
+            x: isMobile ? -1 : 1.3,
             z: isMobile ? 1 : 3,
             rotateX: isMobile ? 0 : 7,
             rotateY: isMobile ? Math.PI / 4 : 6.5,
@@ -135,7 +135,8 @@ export const Experience = (props) => {
         <Avatar animation={characterAnimation} wireframe={section === 1} />
       </motion.group>
 
-      <ambientLight intensity={1} />
+      <ambientLight intensity={0.9} />
+
       <motion.group
         position={[
           isMobile ? 0 : 1.5 * officeScaleRatio,
@@ -161,11 +162,13 @@ export const Experience = (props) => {
       </motion.group>
 
       {/* SKILLS */}
+  
+
       <motion.group
         position={[
           0,
           isMobile ? -viewport.height : -1.5 * officeScaleRatio,
-          -10,
+          -15,
         ]}
         animate={{
           z: section === 1 ? 0 : -10,
@@ -177,10 +180,10 @@ export const Experience = (props) => {
               : -1.5 * officeScaleRatio,
         }}
       >
-        <directionalLight position={[-5, 3, 5]} intensity={0.4} />
+        <directionalLight position={[-1, 5, 7]} intensity={0.1} />
         <Float>
-          <mesh position={[1, -3, -15]} scale={[2, 2, 2]}>
-            <sphereGeometry />
+          <mesh position={[1, -3, -15]} scale={[2, 1.4, 2]}>
+            <sphereGeometry radius={5} />
             <MeshDistortMaterial
               opacity={0.8}
               transparent
@@ -191,8 +194,8 @@ export const Experience = (props) => {
           </mesh>
         </Float>
         <Float>
-          <mesh scale={[3, 3, 3]} position={[3, 1, -18]}>
-            <torusKnotGeometry />
+          <mesh scale={[2.7, 2.8, 2.7]} position={[3, 1, -18]}>
+            <torusKnotGeometry tube={10} radius={5}/>
             <MeshDistortMaterial
               opacity={0.8}
               transparent
@@ -215,6 +218,7 @@ export const Experience = (props) => {
           </mesh>
         </Float>
       </motion.group>
+      <spotLight intensity={1} />
 
       <Projects />
     </>
