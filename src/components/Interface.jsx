@@ -2,6 +2,8 @@ import { MeshDistortMaterial, MeshWobbleMaterial } from "@react-three/drei";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { currentProjectAtom, projects } from "./Projects";
+import { useEffect, useState } from "react";
+
 const Section = (props) => {
   const { children } = props;
 
@@ -251,16 +253,42 @@ const WorkSection = () => {
   const previousProject = () => {
     setCurrentProject((currentProject - 1 + projects.length) % projects.length);
   };
+
+ //state
+ const [activeFilter, setActiveFilter] = useState("All");
+ const [animCard, setAnimCard] = useState({ y: 0, opacity: 1 });
+ const [works, setWorks] = useState([]);
+ const [filterWork, setFilterWork] = useState([]);
+
+ //Category Pills Start
+
+
+
+ const handleWorkFilter = (item) => {
+   //TODO: Handle Category Filter Finish before 02/08/2022
+   setActiveFilter(item);
+   setAnimCard([{ y: 100, opacity: 0 }]);
+
+   setTimeout(() => {
+     setAnimCard([{ y: 0, opacity: 1 }]);
+     if (item === "All") {
+       setFilterWork(works);
+     } else {
+       setFilterWork(works.filter((work) => work?.categories?.includes(item)));
+     }
+   }, 500);
+ };
+
   return (
     <Section>
-      <div className="flex w-full h-full gap-8 items-center justify-center">
+      <div className="flex w-full h-full gap-7 items-center justify-center">
         <button
           className="hover:text-indigo-600 transition-colors"
           onClick={previousProject}
         >
           ← Previous
         </button>
-        <h2 className="text-5xl font-bold">Projects</h2>
+        <h2 className="text-5xl font-bold">Work</h2>
         <button
           className="hover:text-indigo-600 transition-colors"
           onClick={nextProject}
@@ -268,6 +296,28 @@ const WorkSection = () => {
           Next →
         </button>
       </div>
+      <div className="flex justify-start items-center text-center border-gray-500 border-t-2">
+{[
+              "JavaScript",
+              "TypeScript",
+              "Php",
+              "WordPress",
+              "Ionic",
+              "Clients",
+              "All",
+            ].map((item, index) => (
+              <div
+                key={index}
+                onClick={() => handleWorkFilter(item)}
+                className={`btn  justify-center rounded-full bg-blue-50 cursor-pointer   ${
+                  activeFilter === item ? "item-active" : "  "
+                }hover:bg-slate-700`}
+              >
+                {item}
+              </div>
+            ))}
+</div>
+  
     </Section>
   );
 };
