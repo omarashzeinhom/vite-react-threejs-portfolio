@@ -73,7 +73,7 @@ export function Office(props) {
           material={materials.Mousepad}
           position={[-0.167, -0.036, -0.263]}
           rotation={[-Math.PI / 2, 0, 0]}
-          scale={[94.831, 83.226, 1.322]}
+          scale={[60, 45, 1.5]}
         />
       </motion.group>
       <motion.group
@@ -88,7 +88,7 @@ export function Office(props) {
           name="Mouse"
           geometry={nodes.Mouse.geometry}
           material={materials["Material.002"]}
-          position={[-0.217, -0.482, -0.098]}
+          position={[-0.2, -0.482, -0.09]}
           scale={[111.897, 579.457, 256.517]}
         />
       </motion.group>
@@ -213,7 +213,7 @@ export function Office(props) {
           name="OfficeChair"
           position={[0.032, -0.104, 0.605]}
           rotation={[-Math.PI / 2, 0, -0.046]}
-          scale={[137.607, 100.631, 93.322]}
+          scale={[105.607, 75.631, 93.322]}
         >
           <mesh
             name="OfficeChair_1"
