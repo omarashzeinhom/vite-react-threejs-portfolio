@@ -125,25 +125,7 @@ export const Projects = () => {
     <group position-y={-viewport.height * 2 + 1}>
      
  
-            {[
-              "JavaScript",
-              "TypeScript",
-              "Php",
-              "WordPress",
-              "Ionic",
-              "Clients",
-              "All",
-            ].map((item, index) => (
-              <motion.group
-                key={index}
-                onClick={() => handleWorkFilter(item)}
-                className={`btn bg-blue-400 ${
-                  activeFilter === item ? "item-active" : "  "
-                }`}
-              >
-                {item}
-              </motion.group>
-            ))}
+            
     
      
      

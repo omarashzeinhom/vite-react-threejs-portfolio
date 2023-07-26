@@ -43,7 +43,7 @@ export const Experience = (props) => {
   useEffect(() => {
     setCharacterAnimation("Falling");
     setTimeout(() => {
-      setCharacterAnimation(section === 0 ? "Typing" : "Waving");
+      setCharacterAnimation(section === 0 ? "Typing" : "Standing");
     }, 600);
   }, [section]);
 
@@ -239,7 +239,7 @@ export const Experience = (props) => {
           </mesh>
         </Float>
       </motion.group>
-      <spotLight intensity={1} />
+      <spotLight intensity={1} scale={[4,3,4]} position={[3,3,3]} />
 
       <Projects />
     </>
