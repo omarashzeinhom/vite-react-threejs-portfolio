@@ -84,12 +84,11 @@ export const Experience = (props) => {
       <Background />
       <motion.group
         ref={characterGroup}
-        position={[2.0072935059634513, 1.04400000000000002, 2.581801948466054]}
-        rotation={[-3.141592653589793, 1.2053981633974482, 3.141592653589793]}
+        rotation={[-3, 1.2, 3.2]}
         scale={[officeScaleRatio, officeScaleRatio, officeScaleRatio]}
         animate={"" + section}
         transition={{
-          duration: 0.6,
+          duration: 0.4,
         }}
         variants={{
           0: {
@@ -158,7 +157,7 @@ export const Experience = (props) => {
         <group
           ref={characterContainerAboutRef}
           name="CharacterSpot"
-          position={[0.07, 0.16, -0.57]}
+          position={[0.05, 0.1, -0.57]}
           rotation={[-Math.PI, 0.42, -Math.PI]}
         ></group>
       </motion.group>
@@ -239,7 +238,7 @@ export const Experience = (props) => {
           </mesh>
         </Float>
       </motion.group>
-      <spotLight intensity={1} scale={[4,3,4]} position={[3,3,3]} />
+      <spotLight intensity={1} scale={[4, 3, 4]} position={[3, 3, 3]} />
 
       <Projects />
     </>
