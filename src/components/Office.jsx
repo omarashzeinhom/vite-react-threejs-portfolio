@@ -43,7 +43,7 @@ export function Office(props) {
   })
 
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} position={[-0.1, -1.1, 0.1]}>
     <motion.group 
     animate={{
       scale: section === 0 ? 1 : 0.5,
