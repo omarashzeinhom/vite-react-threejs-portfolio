@@ -84,8 +84,7 @@ export const Experience = (props) => {
       <Background />
       <motion.group
         ref={characterGroup}
-        position={[2.0072935059634513, 1.04400000000000002, 2.581801948466054]} 
-
+        position={[2.0072935059634513, 1.04400000000000002, 2.581801948466054]}
         rotation={[-3.141592653589793, 1.2053981633974482, 3.141592653589793]}
         scale={[officeScaleRatio, officeScaleRatio, officeScaleRatio]}
         animate={"" + section}
@@ -97,23 +96,21 @@ export const Experience = (props) => {
             scaleX: officeScaleRatio,
             scaleY: officeScaleRatio,
             scaleZ: officeScaleRatio,
-   
-            
           },
           1: {
-            y: -viewport.height + 0.1,
-            x: isMobile ? 0.3 : 0,
-            z: 7,
+            y: isMobile ? -viewport.height - 3.0 : -viewport.height + 0.2,
+            x: isMobile ? 2.5 : 0,
+            z: isMobile ? -14 : 5,
             rotateX: 0,
             rotateY: isMobile ? -Math.PI / 2 : 0,
             rotateZ: 0,
-            scaleX: isMobile ? 1.5 : 1,
-            scaleY: isMobile ? 1.5 : 1,
-            scaleZ: isMobile ? 1.5 : 1,
+            scaleX: isMobile ? 1.5 : 1.5,
+            scaleY: isMobile ? 1.5 : 1.5,
+            scaleZ: isMobile ? 1.5 : 1.5,
           },
           2: {
-            x: isMobile ? -1.4 : -2,
-            y: -viewport.height * 2 + 0.5,
+            x: isMobile ? -0.7 : -1.5,
+            y: -viewport.height * 2 + 0.2,
             z: 0,
             rotateX: 0,
             rotateY: Math.PI / 2,
@@ -124,10 +121,10 @@ export const Experience = (props) => {
           },
           3: {
             y: -viewport.height * 3 + 1,
-            x: 0.24,
-            z: 8.5,
-            rotateX: 0,
-            rotateY: -Math.PI / 4,
+            x: isMobile ? -0.74 : 1.3,
+            z: isMobile ? 1 : 3,
+            rotateX: isMobile ? 0 : 7,
+            rotateY: isMobile ? Math.PI / 4 : 6.5,
             rotateZ: 0,
             scaleX: 1,
             scaleY: 1,
@@ -137,6 +134,7 @@ export const Experience = (props) => {
       >
         <Avatar animation={characterAnimation} wireframe={section === 1} />
       </motion.group>
+
       <ambientLight intensity={1} />
       <motion.group
         position={[
@@ -194,7 +192,7 @@ export const Experience = (props) => {
         </Float>
         <Float>
           <mesh scale={[3, 3, 3]} position={[3, 1, -18]}>
-            <sphereGeometry />
+            <torusKnotGeometry />
             <MeshDistortMaterial
               opacity={0.8}
               transparent
@@ -206,7 +204,7 @@ export const Experience = (props) => {
         </Float>
         <Float>
           <mesh scale={[1, 1, 1]} position={[-3, -1, -11]}>
-            <sphereBufferGeometry />
+            <torusGeometry />
             <MeshWobbleMaterial
               opacity={0.8}
               transparent
@@ -217,6 +215,7 @@ export const Experience = (props) => {
           </mesh>
         </Float>
       </motion.group>
+
       <Projects />
     </>
   );

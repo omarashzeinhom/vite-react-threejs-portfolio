@@ -4,7 +4,7 @@ import { animate, useMotionValue } from "framer-motion";
 
 import { motion } from "framer-motion-3d";
 import { atom, useAtom } from "jotai";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef,useState } from "react";
 
 export const projects = [
   {
@@ -87,9 +87,36 @@ export const currentProjectAtom = atom(Math.floor(projects.length / 2));
 export const Projects = () => {
   const { viewport } = useThree();
   const [currentProject] = useAtom(currentProjectAtom);
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [animCard, setAnimCard] = useState({ y: 0, opacity: 1 });
+  const [works, setWorks] = useState([]);
+  const [filterWork, setFilterWork] = useState([]);
+  
+  
+  const handleWorkFilter = (item) => {
+    //TODO: Handle Category Filter Finish before 02/08/2022
+    setActiveFilter(item);
+    setAnimCard([{ y: 100, opacity: 0 }]);
+
+    setTimeout(() => {
+      setAnimCard([{ y: 0, opacity: 1 }]);
+      if (item === "All") {
+        setFilterWork(works);
+      } else {
+        setFilterWork(works.filter((work) => work?.categories?.includes(item)));
+      }
+    }, 500);
+  };
+  //Category Pills End
 
   return (
     <group position-y={-viewport.height * 2 + 1}>
+     
+ 
+         
+    
+     
+     
       {projects.map((project, index) => (
         <motion.group
           key={"project_" + index}
