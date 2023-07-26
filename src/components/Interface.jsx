@@ -60,8 +60,7 @@ const AboutSection = () => {
           },
         }}
       >
-       I develop 3D and animated Javascript and php websites
-       from scratch.
+        I develop 3D and animated Javascript and php websites from scratch.
       </motion.p>
       <motion.button
         initial={{
@@ -140,7 +139,6 @@ const SkillsSection = (props) => {
   const { section } = props;
   return (
     <Section>
-   
       <motion.div whileInView={"visible"}>
         <h2 className="text-5xl font-bold"> Skills</h2>
 
@@ -232,9 +230,6 @@ const SkillsSection = (props) => {
           ))}
         </div>
       </motion.div>
-    
-
-   
     </Section>
   );
 };
@@ -250,10 +245,8 @@ const WorkSection = () => {
     setCurrentProject((currentProject - 1 + projects.length) % projects.length);
   };
 
-
   return (
     <Section>
-
       <div className="flex w-full h-full gap-7 items-center justify-center">
         <button
           className="hover:text-indigo-600 transition-colors"
@@ -269,8 +262,6 @@ const WorkSection = () => {
           Next →
         </button>
       </div>
-
-  
     </Section>
   );
 };
@@ -288,14 +279,14 @@ const ContactSection = () => {
             >
               Name
             </label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" className="w-full" />
             <label
               htmlFor="email"
               className="font-medium text-gray-900 block mb-1"
             >
               Email
             </label>
-            <input type="text" name="email" id="email" />
+            <input className="w-full" type="text" name="email" id="email" />
 
             <label
               htmlFor="message"
