@@ -89,7 +89,7 @@ export const Projects = () => {
   const [currentProject] = useAtom(currentProjectAtom);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animCard, setAnimCard] = useState({ y: 0, opacity: 1 });
-  const [works, setWorks] = useState([]);
+  const [work, setWork] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
   
   
@@ -109,11 +109,41 @@ export const Projects = () => {
   };
   //Category Pills End
 
+ /*
+  useEffect(() => {
+    const query = '*[_type == "work"]';
+    client.fetch(query).then((data) => {
+      setWork(data);
+      setFilterWork(data);
+    });
+  }, []);
+ 
+ */
+
+  
   return (
     <group position-y={-viewport.height * 2 + 1}>
      
  
-         
+            {[
+              "JavaScript",
+              "TypeScript",
+              "Php",
+              "WordPress",
+              "Ionic",
+              "Clients",
+              "All",
+            ].map((item, index) => (
+              <motion.group
+                key={index}
+                onClick={() => handleWorkFilter(item)}
+                className={`btn bg-blue-400 ${
+                  activeFilter === item ? "item-active" : "  "
+                }`}
+              >
+                {item}
+              </motion.group>
+            ))}
     
      
      

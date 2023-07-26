@@ -4,13 +4,13 @@ import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 export const Background = () => {
+  const data = useScroll();
+  const tl = useRef();
   const material = useRef();
   const color = useRef({
     color: "#b9bcff",
   });
-  const data = useScroll();
 
-  const tl = useRef();
 
   useFrame(() => {
     tl.current.progress(data.scroll.current);
@@ -32,7 +32,7 @@ export const Background = () => {
 
   return (
     <group>
-      <Sphere scale={[30, 30, 30]}>
+      <Sphere scale={[10, 30, 30]}>
         <meshBasicMaterial
           ref={material}
           side={THREE.BackSide}
