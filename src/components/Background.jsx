@@ -3,9 +3,11 @@ import { useFrame } from "@react-three/fiber";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+
+
 export const Background = () => {
   const data = useScroll();
-  const tl = useRef();
+  const tl = useRef(0);
   const material = useRef();
   const color = useRef({
     color: "#b9bcff",

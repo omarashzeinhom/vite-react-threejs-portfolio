@@ -42,11 +42,14 @@ export function Office(props) {
     textureGlassMaterial.opacity = glassTextureOpacity.get();
   });
 
+
+
+  
   return (
-    <group {...props} dispose={null} position={[0.50, -0.85, 0.95]} scale={[1,1,1]}>
+    <group {...props} dispose={null} position={[0.50, -0.85, 0.95]} >
       <motion.group
         animate={{
-          scale: section === 0 ? 2 : 0.5,
+          scale: section === 0 ? 1 : 0.5,
         }}
         name="RootNode012"
         position={[2.195, 0.607, -2.606]}
@@ -211,7 +214,7 @@ export function Office(props) {
       >
         <group
           name="OfficeChair"
-          position={[0.032, -0.12, 0.805]}
+          position={[0.022, -0.12, 0.905]}
           rotation={[-Math.PI / 2, 0, -0.046]}
           scale={[105.607, 75.631, 85.322]}
         >

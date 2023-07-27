@@ -34,3 +34,5 @@ export const LoadingScreen = (props) => {
     </div>
   );
 };
+
+export default LoadingScreen;

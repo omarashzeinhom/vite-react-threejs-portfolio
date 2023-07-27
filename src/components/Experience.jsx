@@ -28,6 +28,14 @@ export const Experience = (props) => {
   const cameraPositionX = useMotionValue();
   const cameraLookAtX = useMotionValue();
 
+
+
+
+
+
+
+
+
   useEffect(() => {
     animate(cameraPositionX, menuOpened ? -5 : 0, {
       ...framerMotionConfig,
@@ -78,6 +86,9 @@ export const Experience = (props) => {
 
     // console.log([euler.x, euler.y, euler.z]);
   });
+
+
+
 
   return (
     <>

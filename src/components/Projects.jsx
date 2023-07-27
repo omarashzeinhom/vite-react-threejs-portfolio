@@ -5,6 +5,7 @@ import { animate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion-3d";
 import { atom, useAtom } from "jotai";
 import { useEffect, useRef,useState } from "react";
+import { urlFor, client } from "../../client";
 
 export const projects = [
   {
@@ -29,11 +30,55 @@ export const projects = [
   },
 ];
 
+
+
+
+
 const Project = (props) => {
   const { project, highlighted } = props;
 
   const background = useRef();
   const bgOpacity = useMotionValue(0.4);
+
+  /* Getting Data from Backend Start */
+
+/*
+
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [animCard, setAnimCard] = useState({ y: 0, opacity: 1 });
+  const [workProjects, setWorkProjects] = useState([]);
+  const [filterWork, setFilterWork] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "work"]';
+    client.fetch(query).then((data) => {
+      setWorkProjects(data);
+      setFilterWork(data);
+    });
+  }, []);
+
+  console.log(workProjects);
+
+const handleWorkFilter = (item) => {
+    //TODO: Handle Category Filter Finish before 02/08/2022
+    setActiveFilter(item);
+    setAnimCard([{ y: 100, opacity: 0 }]);
+
+    setTimeout(() => {
+      setAnimCard([{ y: 0, opacity: 1 }]);
+      if (item === "All") {
+        setFilterWork(workProjects);
+      } else {
+        setFilterWork(workProjects.filter((worked) => worked?.categories?.includes(item)));
+      }
+    }, 500);
+  };
+*/
+
+  /* Getting Data from Backend End */
+
+
+
 
   useEffect(() => {
     animate(bgOpacity, highlighted ? 0.7 : 0.4);
@@ -45,6 +90,29 @@ const Project = (props) => {
 
   return (
     <group {...props}>
+      {/*
+      
+      {workProjects.map((workProject,index)=>
+      (
+        <Text>
+        {workProject.name}
+        {workProject.description}
+        {workProject.projectGitHubLink}
+        {workProject.projectLink}
+        {workProject.categories}
+
+        </Text>
+
+        
+      )
+      
+      )}
+      
+      */}
+
+
+
+
       <mesh
         position-z={-0.001}
         onClick={() => window.open(project.url, "_blank")}
@@ -87,38 +155,11 @@ export const currentProjectAtom = atom(Math.floor(projects.length / 2));
 export const Projects = () => {
   const { viewport } = useThree();
   const [currentProject] = useAtom(currentProjectAtom);
-  const [activeFilter, setActiveFilter] = useState("All");
-  const [animCard, setAnimCard] = useState({ y: 0, opacity: 1 });
-  const [work, setWork] = useState([]);
-  const [filterWork, setFilterWork] = useState([]);
-  
-  
-  const handleWorkFilter = (item) => {
-    //TODO: Handle Category Filter Finish before 02/08/2022
-    setActiveFilter(item);
-    setAnimCard([{ y: 100, opacity: 0 }]);
 
-    setTimeout(() => {
-      setAnimCard([{ y: 0, opacity: 1 }]);
-      if (item === "All") {
-        setFilterWork(works);
-      } else {
-        setFilterWork(works.filter((work) => work?.categories?.includes(item)));
-      }
-    }, 500);
-  };
-  //Category Pills End
+  
 
- /*
-  useEffect(() => {
-    const query = '*[_type == "work"]';
-    client.fetch(query).then((data) => {
-      setWork(data);
-      setFilterWork(data);
-    });
-  }, []);
  
- */
+
 
   
   return (

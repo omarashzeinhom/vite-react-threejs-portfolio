@@ -21,7 +21,7 @@ export function Avatar(props) {
   const { nodes, materials } = useGLTF("models/avatar.glb");
  
   // animations
-  const { animations: wavingAnimation } = useFBX("animations/WavingGesture.fbx");
+  const { animations: wavingAnimation } = useFBX("animations/Waving.fbx");
   const { animations: typingAnimation } = useFBX("animations/Typing.fbx");
   const { animations: fallingAnimation } = useFBX("animations/Falling.fbx");
   const { animations: standingAnimation } = useFBX("animations/Standing.fbx");

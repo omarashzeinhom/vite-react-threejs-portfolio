@@ -1,13 +1,16 @@
 import sanityClient from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 
+const SANITY_TOKEN = `skrblreFgZDKF48rkXPBs8lJ47QRznMyp4QAKbLZtoGhSYIs7veRL2Dhqih6NcAvsAzZMajkKGbuQUq4GnOdx3798OJfBpIZiqTAvayITasD0hiks5IjZuGjUhXxWf7eihttmy2G20qQaKjpDknfIZ1CVni69SpFAtlfUgCrL2eE1autvq4S`;
+const PROJECT_ID = `cq3uxsem`
 //Setup Sanity Client
+
 export const client = sanityClient({
-  projectId: "cq3uxsem",
+  projectId: `cq3uxsem`,
   dataset: "production",
   apiVersion: "2022-02-01",
   useCdn: true,
-  token: "skxubiVGztg9pQpYnJ81UFudhh0F4IQM3ghZ25yRN3kE8Jf4BrAqviDxkTcpGl57fxb59wQvEo2iSoBQ4mD515fHrzfU2PQmm9DZyS13tYyw2OGPvwdZMH6CO3uKOvCIJWkBJuCeHeJyavNFsgVgDDDcj8VrtE6nMre9pUx1UlkapqBtAmjc",
+  token: `skrblreFgZDKF48rkXPBs8lJ47QRznMyp4QAKbLZtoGhSYIs7veRL2Dhqih6NcAvsAzZMajkKGbuQUq4GnOdx3798OJfBpIZiqTAvayITasD0hiks5IjZuGjUhXxWf7eihttmy2G20qQaKjpDknfIZ1CVni69SpFAtlfUgCrL2eE1autvq4S`,
   ignoreBrowserTokenWarning: true,
 });
 
