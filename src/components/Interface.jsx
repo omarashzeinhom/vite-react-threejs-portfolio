@@ -47,7 +47,7 @@ const AboutSection = () => {
         <span className="bg-white px-1 italic rounded"> Omar Zeinhom</span>
       </h1>
       <motion.p
-        className="text-lg text-indigo-900 mt-4"
+        className="text-lg text-teal-900 mt-4"
         initial={{
           opacity: 0,
           y: 25,
@@ -76,7 +76,7 @@ const AboutSection = () => {
             delay: 2.5,
           },
         }}
-        className="bg-blue-500 text-white py-4 px-8 rounded-lg font-bold"
+        className="bg-teal-500 text-white py-4 px-8 rounded-lg font-bold"
       >
         <a href="#contact">Contact</a>
       </motion.button>

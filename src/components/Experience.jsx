@@ -45,11 +45,14 @@ export const Experience = (props) => {
     setTimeout(() => {
       setCharacterAnimation(
         section === 0 ? "Typing" : "Standing",
-    
+        section === 1 ? "Typing" : "Standing",
+        section === 2 ? "Typing" : "Standing",
+        section === 3 ? "Typing" : "Standing",
+        section === 4 ? "Typing" : "Standing",
+
       );
 
-   
-    }, 400);
+    }, 500);
   }, [section]);
 
   const characterGroup = useRef();
@@ -127,6 +130,17 @@ export const Experience = (props) => {
             scaleX: isMobile ? 0.8 : 1.2,
             scaleY: isMobile ? 0.8 : 1.2,
             scaleZ: isMobile ? 0.8 : 1.2,
+          },
+          4: {
+            x: isMobile ? -0.7 : -1.5,
+            y: -viewport.height * 2 + 0.2,
+            z: 0,
+            rotateX: 0,
+            rotateY: Math.PI / 2,
+            rotateZ: 0,
+            scaleX: 1,
+            scaleY: 1,
+            scaleZ: 1,
           },
           
         }}
@@ -238,7 +252,10 @@ export const Experience = (props) => {
       </motion.group>
       <spotLight intensity={1} scale={[4, 3, 4]} position={[3, 3, 3]} />
 
+
       <Projects />
+  
+
     </>
   );
 };

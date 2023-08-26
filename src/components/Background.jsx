@@ -10,7 +10,7 @@ export const Background = () => {
   const tl = useRef();
   const material = useRef();
   const color = useRef({
-    color: "#b9bcff",
+    color: "#d4b797",
   });
 
 
@@ -23,13 +23,13 @@ export const Background = () => {
     tl.current = gsap.timeline();
     
     tl.current.to(color.current, {
-      color: "#7a7ca5",
+      color: "#0066CC",
     });
     tl.current.to(color.current, {
-      color: "#212121",
+      color: "#39a78e",
     });
     tl.current.to(color.current, {
-      color: "#9b96dd",
+      color: "#8a8a8a",
     });
   }, []);
 
