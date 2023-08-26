@@ -250,7 +250,7 @@ const WorkSection = () => {
     <Section>
       <div className="flex w-full h-full gap-7 items-center justify-center">
         <button
-          className="hover:text-indigo-600 transition-colors"
+          className="hover:text-teal-700 transition-colors"
           onClick={previousProject}
         >
           ← Previous
@@ -316,7 +316,7 @@ const ContactSection = () => {
               style={{ resize: "none" }}
             ></textarea>
 
-            <button className="bg-blue-500 text-white py-4 px-8 rounded-lg font-bold mt-15">
+            <button className="bg-teal-500 text-white py-4 px-8 rounded-lg font-bold mt-15">
               Submit
             </button>
           </form>

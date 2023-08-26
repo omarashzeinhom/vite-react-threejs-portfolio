@@ -5,29 +5,38 @@ import { animate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion-3d";
 import { atom, useAtom } from "jotai";
 import { useEffect, useRef, useState } from "react";
-import { urlFor, client } from "../../client";
+// { urlFor, client } from "../../client";
 
 export const projects = [
   {
     title: "ToDo",
-    url: "about:blank",
+    url: "https://todoandgoedu.netlify.app/",
     image: "projects/tstodo.webp",
     description:
       "Built from scratch Back4app, MongoDB , Parse , Ionic Typescript and Parse js-sdk.",
   },
   {
     title: "Gym",
-    url: "https://gymcompanyportfolio.netlify.app/",
+    url: "https://ozgymdemo.netlify.app/",
     image: "projects/gym.webp",
     description: "Full Stack Gym in MUI and Sanity API",
   },
 
   {
     title: "Trophy House",
-    url: "www.gifthouseeg.org",
+    url: "https://gifthouseeg.org",
     image: "projects/th.webp",
     description: " A Custom Luxurious Theme Developed From Scratch.",
   },
+  
+  {
+    title: "Trophy House",
+    url: "https://gifthouseeg.org",
+    image: "projects/th.webp",
+    description: " A Custom Luxurious Theme Developed From Scratch.",
+  },
+
+  
 ];
 
 const Project = (props) => {

@@ -43,15 +43,7 @@ export const Experience = (props) => {
   useEffect(() => {
     setCharacterAnimation("Falling");
     setTimeout(() => {
-      setCharacterAnimation(
-        section === 0 ? "Typing" : "Standing",
-        section === 1 ? "Typing" : "Standing",
-        section === 2 ? "Typing" : "Standing",
-        section === 3 ? "Typing" : "Standing",
-        section === 4 ? "Typing" : "Standing",
-
-      );
-
+      setCharacterAnimation(section === 0 ? "Typing" : "Standing" || "Falling");
     }, 500);
   }, [section]);
 
@@ -60,8 +52,8 @@ export const Experience = (props) => {
   useFrame((state) => {
     let curSection = Math.floor(data.scroll.current * data.pages);
 
-    if (curSection > 5) {
-      curSection = 5;
+    if (curSection > 4) {
+      curSection = 4;
     }
 
     if (curSection !== section) {
@@ -76,7 +68,6 @@ export const Experience = (props) => {
         characterGroup.current.position
       );
     }
-
   });
 
   return (
@@ -120,32 +111,31 @@ export const Experience = (props) => {
           },
           3: {
             y: isMobile
-              ? -viewport.height * 2.9 - 0.1
-              : -viewport.height * 3 + 0.1,
+              ? -viewport.height * 3 - 0.1
+              : -viewport.height * 3 + 0.2,
             x: isMobile ? -1 : 1,
-            z: isMobile ? 1 : 4,
+            z: isMobile ? 2 : 3,
             rotateX: isMobile ? 0 : 1,
             rotateY: isMobile ? Math.PI / 4 : 4.7,
             rotateZ: isMobile ? 0 : 1,
-            scaleX: isMobile ? 0.8 : 1.2,
+            scaleX: isMobile ? 0.9 : 1.2,
             scaleY: isMobile ? 0.8 : 1.2,
             scaleZ: isMobile ? 0.8 : 1.2,
           },
           4: {
-            x: isMobile ? -0.7 : -1.5,
+            x: isMobile ? -0.5 : -1.4,
             y: -viewport.height * 2 + 0.2,
-            z: 0,
-            rotateX: 0,
-            rotateY: Math.PI / 2,
-            rotateZ: 0,
-            scaleX: 1,
-            scaleY: 1,
-            scaleZ: 1,
+            z: 0.1,
+            rotateX: 0.1,
+            rotateY: Math.PI / 1.9,
+            rotateZ: 0.1,
+            scaleX: 1.1,
+            scaleY: 1.1,
+            scaleZ: 1.2,
           },
-          
         }}
       >
-        <Avatar animation={characterAnimation} wireframe={section === 1} />
+        <Avatar animation={characterAnimation} wireframe={section === 0} />
       </motion.group>
 
       <ambientLight intensity={0.9} />
@@ -154,7 +144,7 @@ export const Experience = (props) => {
         position={[
           isMobile ? 0 : 1.5 * officeScaleRatio,
           isMobile ? -viewport.height / 6 : 2,
-          3,
+          2,
         ]}
         scale={[officeScaleRatio, officeScaleRatio, officeScaleRatio]}
         rotation-y={-Math.PI / 4}
@@ -252,9 +242,8 @@ export const Experience = (props) => {
       </motion.group>
       <spotLight intensity={1} scale={[4, 3, 4]} position={[3, 3, 3]} />
 
-
       <Projects />
-  
+
 
     </>
   );
