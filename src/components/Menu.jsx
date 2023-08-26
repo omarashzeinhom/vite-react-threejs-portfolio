@@ -29,15 +29,42 @@ const Menu = (props) => {
         }`}
       >
         <div className="flex-1 flex items-start justify-center flex-col gap-5 p-8">
-          <MenuButton label="About" onClick={() => onSectionChange(0)} />
-          <MenuButton label="Skills" onClick={() => onSectionChange(1)} />
-          <MenuButton label="Work" onClick={() => onSectionChange(2)} />
-          <MenuButton label="Contact" onClick={() => onSectionChange(3)} />
+          {menuItems.map((item, index) => (
+            <MenuButton
+              label={item?.label}
+              onClick={() => onSectionChange(item?.sectionNumber)}
+            />
+          ))}
         </div>
       </div>
     </>
   );
 };
+
+const menuItems = [
+  {
+    label: "About",
+    sectionNumber: 0,
+  },
+  {
+    label: "Skills",
+    sectionNumber: 1,
+  },
+  {
+    label: "Work",
+    sectionNumber: 2,
+  },
+
+  {
+    label: "Certificates",
+    sectionNumber: 3,
+  },
+
+  {
+    label: "Contact",
+    sectionNumber: 4,
+  },
+];
 
 const MenuButton = (props) => {
   const { label, onClick } = props;

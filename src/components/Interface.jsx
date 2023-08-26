@@ -32,6 +32,7 @@ const Interface = () => {
       <AboutSection />
       <SkillsSection />
       <WorkSection />
+      <CertificateSection/>
       <ContactSection />
     </div>
   );
@@ -261,6 +262,19 @@ const WorkSection = () => {
         >
           Next →
         </button>
+      </div>
+    </Section>
+  );
+};
+
+const CertificateSection = () => {
+ 
+  return (
+    <Section>
+      <div className="flex w-full h-full gap-7 items-center justify-center">
+     
+        <h2 className="text-5xl font-bold">Certificates</h2>
+       
       </div>
     </Section>
   );

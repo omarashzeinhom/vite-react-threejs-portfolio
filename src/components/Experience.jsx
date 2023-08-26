@@ -28,14 +28,6 @@ export const Experience = (props) => {
   const cameraPositionX = useMotionValue();
   const cameraLookAtX = useMotionValue();
 
-
-
-
-
-
-
-
-
   useEffect(() => {
     animate(cameraPositionX, menuOpened ? -5 : 0, {
       ...framerMotionConfig,
@@ -51,8 +43,13 @@ export const Experience = (props) => {
   useEffect(() => {
     setCharacterAnimation("Falling");
     setTimeout(() => {
-      setCharacterAnimation(section === 0 ? "Typing" : "Waving");
-    }, 600);
+      setCharacterAnimation(
+        section === 0 ? "Typing" : "Standing",
+    
+      );
+
+   
+    }, 400);
   }, [section]);
 
   const characterGroup = useRef();
@@ -60,8 +57,8 @@ export const Experience = (props) => {
   useFrame((state) => {
     let curSection = Math.floor(data.scroll.current * data.pages);
 
-    if (curSection > 3) {
-      curSection = 3;
+    if (curSection > 5) {
+      curSection = 5;
     }
 
     if (curSection !== section) {
@@ -71,24 +68,13 @@ export const Experience = (props) => {
     state.camera.position.x = cameraPositionX.get();
     state.camera.lookAt(cameraLookAtX.get(), 0, 0);
 
-    // const position = new THREE.Vector3();
     if (section === 0) {
       characterContainerAboutRef.current.getWorldPosition(
         characterGroup.current.position
       );
     }
-    // console.log([position.x, position.y, position.z]);
 
-    // const quaternion = new THREE.Quaternion();
-    // characterContainerAboutRef.current.getWorldQuaternion(quaternion);
-    // const euler = new THREE.Euler();
-    // euler.setFromQuaternion(quaternion, "XYZ");
-
-    // console.log([euler.x, euler.y, euler.z]);
   });
-
-
-
 
   return (
     <>
@@ -131,17 +117,18 @@ export const Experience = (props) => {
           },
           3: {
             y: isMobile
-              ? -viewport.height * 3 + 1.9
+              ? -viewport.height * 2.9 - 0.1
               : -viewport.height * 3 + 0.1,
             x: isMobile ? -1 : 1,
             z: isMobile ? 1 : 4,
             rotateX: isMobile ? 0 : 1,
             rotateY: isMobile ? Math.PI / 4 : 4.7,
             rotateZ: isMobile ? 0 : 1,
-            scaleX: isMobile ? 1 : 1.5,
-            scaleY: isMobile ? 1 : 1.5,
-            scaleZ: isMobile ? 1 : 1.5,
+            scaleX: isMobile ? 0.8 : 1.2,
+            scaleY: isMobile ? 0.8 : 1.2,
+            scaleZ: isMobile ? 0.8 : 1.2,
           },
+          
         }}
       >
         <Avatar animation={characterAnimation} wireframe={section === 1} />

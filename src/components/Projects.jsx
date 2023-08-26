@@ -4,7 +4,7 @@ import { animate, useMotionValue } from "framer-motion";
 
 import { motion } from "framer-motion-3d";
 import { atom, useAtom } from "jotai";
-import { useEffect, useRef,useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { urlFor, client } from "../../client";
 
 export const projects = [
@@ -30,10 +30,6 @@ export const projects = [
   },
 ];
 
-
-
-
-
 const Project = (props) => {
   const { project, highlighted } = props;
 
@@ -42,7 +38,7 @@ const Project = (props) => {
 
   /* Getting Data from Backend Start */
 
-/*
+  /*
 
   const [activeFilter, setActiveFilter] = useState("All");
   const [animCard, setAnimCard] = useState({ y: 0, opacity: 1 });
@@ -77,9 +73,6 @@ const handleWorkFilter = (item) => {
 
   /* Getting Data from Backend End */
 
-
-
-
   useEffect(() => {
     animate(bgOpacity, highlighted ? 0.7 : 0.4);
   }, [highlighted]);
@@ -109,9 +102,6 @@ const handleWorkFilter = (item) => {
       )}
       
       */}
-
-
-
 
       <mesh
         position-z={-0.001}
@@ -156,20 +146,8 @@ export const Projects = () => {
   const { viewport } = useThree();
   const [currentProject] = useAtom(currentProjectAtom);
 
-  
-
- 
-
-
-  
   return (
     <group position-y={-viewport.height * 2 + 1}>
-     
- 
-            
-    
-     
-     
       {projects.map((project, index) => (
         <motion.group
           key={"project_" + index}
