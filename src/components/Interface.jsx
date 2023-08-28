@@ -7,6 +7,7 @@ import emailjs from "@emailjs/browser";
 import { styles } from "./styles";
 import { slideIn } from "../utils/motion";
 import StarsCanvas from "./canvas/Stars";
+import EarthCanvas from "./canvas/Earth";
 
 
 const Section = (props) => {
@@ -346,7 +347,7 @@ const ContactSection = () => {
     <Section>
 <section id="contact">
 <div
-      className={` flex flex-row xl:flex-col-reverse overflow-hidden`}
+      className={` flex flex-row xl:flex-col-reverse overflow-hidden w-full`}
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
@@ -408,6 +409,7 @@ const ContactSection = () => {
         className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
       >
         <StarsCanvas />
+
       </motion.div>
     </div>
 </section>
