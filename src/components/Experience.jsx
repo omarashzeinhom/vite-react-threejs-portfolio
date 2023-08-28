@@ -43,7 +43,10 @@ export const Experience = (props) => {
   useEffect(() => {
     setCharacterAnimation("Falling");
     setTimeout(() => {
-      setCharacterAnimation(section === 0 ? "Typing" : "Standing" || "Falling");
+      setCharacterAnimation(
+        section  === 0 ? "Typing" : "Standing" || "Falling",
+
+      );
     }, 500);
   }, [section]);
 
@@ -61,7 +64,7 @@ export const Experience = (props) => {
     }
 
     state.camera.position.x = cameraPositionX.get();
-    state.camera.lookAt(cameraLookAtX.get(), 0, 0);
+    state?.camera?.lookAt(cameraLookAtX.get(), 0, 0);
 
     if (section === 0) {
       characterContainerAboutRef.current.getWorldPosition(
@@ -123,19 +126,19 @@ export const Experience = (props) => {
             scaleZ: isMobile ? 0.8 : 1.2,
           },
           4: {
-            x: isMobile ? -0.5 : -1.4,
-            y: -viewport.height * 2 + 0.2,
-            z: 0.1,
-            rotateX: 0.1,
-            rotateY: Math.PI / 1.9,
-            rotateZ: 0.1,
-            scaleX: 1.1,
-            scaleY: 1.1,
-            scaleZ: 1.2,
+            x:  1,
+            z: 1,
+            y: 1,
+            rotateX: 1,
+            rotateY: 1,
+            rotateZ: 1,
+            scaleX: 1,
+            scaleY: 1,
+            scaleZ: 1,
           },
         }}
       >
-        <Avatar animation={characterAnimation} wireframe={section === 0} />
+        <Avatar animation={characterAnimation} wireframe={section === 2} />
       </motion.group>
 
       <ambientLight intensity={0.9} />

@@ -20,7 +20,7 @@ const ScrollManager = (props) => {
         isAnimating.current = true;
       },
       onComplete: () => {
-        isAnimating.current = false;
+        isAnimating.current = true;
       },
     });
   }, [section]);

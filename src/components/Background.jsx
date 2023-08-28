@@ -15,20 +15,20 @@ export const Background = () => {
 
 
   useFrame(() => {
-    tl.current.progress(data.scroll.current);
+    tl?.current?.progress(data?.scroll?.current);
     material.current.color = new THREE.Color(color.current.color);
   });
 
   useEffect(() => {
-    tl.current = gsap.timeline();
+    tl.current = gsap?.timeline();
     
-    tl.current.to(color.current, {
+    tl?.current?.to(color.current, {
       color: "#0066CC",
     });
-    tl.current.to(color.current, {
+    tl?.current?.to(color.current, {
       color: "#39a78e",
     });
-    tl.current.to(color.current, {
+    tl?.current?.to(color.current, {
       color: "#8a8a8a",
     });
   }, []);

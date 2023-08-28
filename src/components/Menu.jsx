@@ -24,13 +24,14 @@ const Menu = (props) => {
         />
       </button>
       <div
-        className={`z-10 fixed top-0 right-0 bottom-0 bg-white transition-all overflow-hidden flex flex-col ${
+        className={`z-10 border-2 border-teal-500 rounded fixed top-0 right-0 bottom-0 bg-black transition-all overflow-hidden flex flex-col ${
           menuOpened ? "w-80" : "w-0"
         }`}
       >
-        <div className="flex-1 flex items-start justify-center flex-col gap-5 p-8">
+        <div className="flex-1 text-white flex items-start justify-center flex-col gap-5 p-8">
           {menuItems.map((item, index) => (
             <MenuButton
+              key={index}
               label={item?.label}
               onClick={() => onSectionChange(item?.sectionNumber)}
             />
