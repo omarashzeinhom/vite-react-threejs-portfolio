@@ -1,3 +1,30 @@
+
+const menuItems = [
+  {
+    label: "About",
+    sectionNumber: 0,
+  },
+  {
+    label: "Skills",
+    sectionNumber: 1,
+  },
+  {
+    label: "Work",
+    sectionNumber: 2,
+  },
+
+  {
+    label: "Certificates",
+    sectionNumber: 3,
+  },
+
+  {
+    label: "Contact",
+    sectionNumber: 4,
+  },
+];
+
+
 const Menu = (props) => {
   const { onSectionChange, menuOpened, setMenuOpened } = props;
 
@@ -24,7 +51,7 @@ const Menu = (props) => {
         />
       </button>
       <div
-        className={`z-10 border-2 border-teal-500 rounded fixed top-0 right-0 bottom-0 bg-black transition-all overflow-hidden flex flex-col ${
+        className={`z-10  rounded fixed top-0 right-0 bottom-0 bg-teal-500 xs:bg-teal-50 transition-all overflow-hidden flex flex-col ${
           menuOpened ? "w-80" : "w-0"
         }`}
       >
@@ -41,31 +68,6 @@ const Menu = (props) => {
     </>
   );
 };
-
-const menuItems = [
-  {
-    label: "About",
-    sectionNumber: 0,
-  },
-  {
-    label: "Skills",
-    sectionNumber: 1,
-  },
-  {
-    label: "Work",
-    sectionNumber: 2,
-  },
-
-  {
-    label: "Certificates",
-    sectionNumber: 3,
-  },
-
-  {
-    label: "Contact",
-    sectionNumber: 4,
-  },
-];
 
 const MenuButton = (props) => {
   const { label, onClick } = props;

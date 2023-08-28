@@ -7,7 +7,7 @@ export const LoadingScreen = (props) => {
 
   useEffect(() => {
     //console.log(progress, total, loaded, item);
-
+    
     if (progress === 100) {
       setTimeout(() => {
         setStarted(true);

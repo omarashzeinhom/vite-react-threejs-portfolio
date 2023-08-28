@@ -80,7 +80,7 @@ export const Experience = (props) => {
         ref={characterGroup}
         rotation={[-3, 1.2, 3.2]}
         scale={[officeScaleRatio, officeScaleRatio, officeScaleRatio]}
-        animate={"" + section}
+        animate={ "" + section}
         transition={{
           duration: 0.4,
         }}
@@ -126,15 +126,26 @@ export const Experience = (props) => {
             scaleZ: isMobile ? 0.8 : 1.2,
           },
           4: {
-            x:  1,
-            z: 1,
-            y: 1,
-            rotateX: 1,
-            rotateY: 1,
-            rotateZ: 1,
-            scaleX: 1,
-            scaleY: 1,
-            scaleZ: 1,
+            y: isMobile ? -viewport.height - 5 : -viewport.height + 0.2,
+            x: isMobile ? 3 : 0,
+            z: isMobile ? -15 : 5,
+            rotateX: 0,
+            rotateY: isMobile ? -Math.PI / 7 : 0,
+            rotateZ: 0,
+            scaleX: isMobile ? 2.5 : 1.5,
+            scaleY: isMobile ? 3.5 : 1.5,
+            scaleZ: isMobile ? 2.5 : 1.5,
+          },
+          5: {
+            y: isMobile ? -viewport.height - 5 : -viewport.height + 0.2,
+            x: isMobile ? 3 : 0,
+            z: isMobile ? -15 : 5,
+            rotateX: 0,
+            rotateY: isMobile ? -Math.PI / 7 : 0,
+            rotateZ: 0,
+            scaleX: isMobile ? 2.5 : 1.5,
+            scaleY: isMobile ? 3.5 : 1.5,
+            scaleZ: isMobile ? 2.5 : 1.5,
           },
         }}
       >

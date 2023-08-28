@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { currentProjectAtom, projects } from "./Projects";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
+import { styles } from "./styles";
+import { slideIn } from "../utils/motion";
+import StarsCanvas from "./canvas/Stars";
+
 
 const Section = (props) => {
   const { children } = props;
@@ -257,7 +264,7 @@ const WorkSection = () => {
         </button>
         <h2 className="text-5xl font-bold">Work</h2>
         <button
-          className="hover:text-indigo-600 transition-colors"
+          className="hover:text-teal-600 transition-colors"
           onClick={nextProject}
         >
           Next →
@@ -281,47 +288,129 @@ const CertificateSection = () => {
 };
 
 const ContactSection = () => {
+  const formRef = useRef();
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { target } = e;
+    const { name, value } = target;
+
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .send(
+        //import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        //import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          to_name: "Omar Ashraf",
+          from_email: form.email,
+          to_email: "omar.ashraf.zeinhom@outlook.com",
+          message: form.message,
+        },
+        //import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setLoading(false);
+          alert("Thank you. I will get back to you as soon as possible.");
+
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
+          console.error(error);
+
+          alert("Ahh, something went wrong. Please try again.");
+        }
+      );
+  };
   return (
     <Section>
-      <section id="contact">
-        <h2 className="text-5xl font-bold">Contact Me</h2>
-        <div className="mt-8 p-8 rounded-md bg-white w-96 max-w-full">
-          <form>
-            <label
-              htmlFor="name"
-              className="font-medium text-gray-900 block mb-1"
-            >
-              Name
-            </label>
-            <input type="text" name="name" id="name" className="w-full" />
-            <label
-              htmlFor="email"
-              className="font-medium text-gray-900 block mb-1"
-            >
-              Email
-            </label>
-            <input className="w-full" type="text" name="email" id="email" />
+<section id="contact">
+<div
+      className={` flex flex-row xl:flex-col-reverse overflow-hidden`}
+    >
+      <motion.div
+        variants={slideIn("left", "tween", 0.2, 1)}
+        className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
+      >
+        <p className={styles.sectionSubText}>Get in touch</p>
+        <h3 className={styles.sectionHeadText}>Contact.</h3>
 
-            <label
-              htmlFor="message"
-              className="font-medium text-gray-900 block mb-1 mt-8"
-            >
-              Message
-            </label>
-
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          className=' flex flex-col gap-8'
+        >
+          <label className='flex flex-col'>
+            <span className='text-white font-medium mb-4'>Your Name</span>
+            <input
+              type='text'
+              name='name'
+              value={form.name}
+              onChange={handleChange}
+              placeholder="What's your name?"
+              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-black rounded-lg outline-none border-none font-medium'
+            />
+          </label>
+          <label className='flex flex-col'>
+            <span className='text-white font-medium mb-4'>Your email</span>
+            <input
+              type='email'
+              name='email'
+              value={form.email}
+              onChange={handleChange}
+              placeholder="What's your web address?"
+              className='text-black bg-tertiary py-4 px-6 placeholder:text-secondary  rounded-lg outline-none border-none font-medium'
+            />
+          </label>
+          <label className='flex flex-col'>
+            <span className='text-white font-medium mb-4'>Your Message</span>
             <textarea
-              name="message"
-              id="message"
-              className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm "
-              style={{ resize: "none" }}
-            ></textarea>
+              rows={7}
+              name='message'
+              value={form.message}
+              onChange={handleChange}
+              placeholder='What you want to say?'
+              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-black rounded-lg outline-none border-none font-medium'
+            />
+          </label>
 
-            <button className="bg-teal-500 text-white py-4 px-8 rounded-lg font-bold mt-15">
-              Submit
-            </button>
-          </form>
-        </div>
-      </section>
+          <button
+            type='submit'
+            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+          >
+            {loading ? "Sending..." : "Send"}
+          </button>
+        </form>
+      </motion.div>
+
+      <motion.div
+        variants={slideIn("right", "tween", 0.2, 1)}
+        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+      >
+        <StarsCanvas />
+      </motion.div>
+    </div>
+</section>
     </Section>
   );
 };

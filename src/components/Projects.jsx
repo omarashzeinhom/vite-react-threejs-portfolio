@@ -30,10 +30,10 @@ export const projects = [
   },
   
   {
-    title: "Trophy House",
-    url: "https://gifthouseeg.org",
+    title: "AG Shield",
+    url: "https://agshield.netlify.app/",
     image: "projects/th.webp",
-    description: " A Custom Luxurious Theme Developed From Scratch.",
+    description: " AG🛡️™ Is a script available for Windows Mac and Linux , that Designed to block Access to Adult Industry Websites Utilizing /etc/hosts & /etc/resolv.conf files ",
   },
 
   
